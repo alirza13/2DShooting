@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Joystick joystick;
     public Rigidbody2D rigBody;
     public float jumpSpeed = 3f, moveSpeed = 2f;
-    public bool isGrounded;
+    public bool isGrounded, facingRight;
     public LayerMask groundLayers;
     RaycastHit2D hit;
 
@@ -41,10 +41,15 @@ public class PlayerMovement : MonoBehaviour
         if (joystick.Horizontal > 0)
         {
             rigBody.velocity = new Vector2(moveSpeed, rigBody.velocity.y);
+            if (!facingRight)
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            facingRight = true;
         }
         if (joystick.Horizontal < 0)
         {
             rigBody.velocity = new Vector2(-moveSpeed, rigBody.velocity.y);
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            facingRight = false;
         }
     }
 }
