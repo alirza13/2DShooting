@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        if (joystick.Vertical > 0.2f && isGrounded)
+        if (joystick.Vertical > 0.4f && isGrounded)
         {
             rigBody.velocity = new Vector2(rigBody.velocity.x, jumpSpeed);
         }
