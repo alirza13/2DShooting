@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     RaycastHit2D hit;
     [SerializeField]
     private int pointsGained = 0;
+    [SerializeField]
     private float minX = -9.5f, maxX = 9.5f;
 
 

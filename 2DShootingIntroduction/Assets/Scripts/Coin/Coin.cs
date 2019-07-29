@@ -9,10 +9,8 @@ public class Coin : MonoBehaviour
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Entered collision");
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Collision Occurred");
             collision.gameObject.GetComponent<PlayerMovement>().AddPoints(pointValue);
             gameObject.SetActive(false);
         }
